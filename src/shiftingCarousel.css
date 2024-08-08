@@ -19,7 +19,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 35rem; /* or a height that fits your design */
+    height: 25rem; /* or a height that fits your design */
     margin: 0 auto;
     margin-top: 6rem; /* Adjust this to control the spacing from the top */
   }

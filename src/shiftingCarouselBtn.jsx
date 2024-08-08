@@ -1,4 +1,7 @@
 import React, {useState} from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+
 
 export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide})=>{
     const [enlarged, setEnlarged] = useState(false);
@@ -38,9 +41,8 @@ export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide})=>{
             setCarouselSlide(handleCarouselSlideLeft());
             handleBtnAnimation();
           }}>
-        <i class="bi bi-arrow-left-circle-fill"></i> 
-        left
-       </button>
+        <FontAwesomeIcon icon={faArrowLeft}/> 
+      </button>
       
         <button
           type="button"
