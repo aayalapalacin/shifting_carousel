@@ -1,27 +1,40 @@
 
+
+
+
+
+
 .carousel-card-container {
-    width: 35rem;
-    height: 35rem;
-    transition: opacity 0.7s, top 0.7s, left 0.7s; 
-  }
+  width: 35rem;
+  height: 31rem;
+  position: absolute;
+  transition: opacity 0.7s, top 0.7s, left 0.7s;
+}
   
-  
+.card-img-top{
+  height: 17rem;
+}  
   .carousel-container {
-    margin: 6rem 0;
     display: flex;
-    flex-direction: column;
-    gap:5rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 35rem; /* or a height that fits your design */
+    margin: 0 auto;
+    margin-top: 6rem; /* Adjust this to control the spacing from the top */
   }
+  
   .card{
     padding: .25rem !important;
   }
-/*   
+
   .carousel-btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem; /* Adjust the spacing between buttons */
     position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-60%);
-  } */
+    margin-top: 2rem; /* Adjust spacing as needed */
+  }
   
   .carousel-card-content {
     width: 24rem;
