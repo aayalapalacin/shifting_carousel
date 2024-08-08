@@ -13,17 +13,17 @@ const playLearnCarouselData = [
       </ul>
     ),
   },
-  {
-    carouselImg:"https://picsum.photos/id/200/200",
-    carouselTitle: "test",
-    carouselDescrtiption: (
-      <ul>
-        <li>8+ cribs for naptime</li>
-        <li>8+ strollers for enjoying outdoors</li>
-        <li>50+ toys promoting development</li>
-      </ul>
-    ),
-  },
+  // {
+  //   carouselImg:"https://picsum.photos/id/200/200",
+  //   carouselTitle: "test",
+  //   carouselDescrtiption: (
+  //     <ul>
+  //       <li>8+ cribs for naptime</li>
+  //       <li>8+ strollers for enjoying outdoors</li>
+  //       <li>50+ toys promoting development</li>
+  //     </ul>
+  //   ),
+  // },
   {
     carouselImg:"https://picsum.photos/id/2/200",
     carouselTitle: "Outdoor Area",
@@ -60,6 +60,34 @@ const playLearnCarouselData = [
   },
 ];
 
+let carouselStylesArray =[{
+  top: "0rem",
+  left: "0rem",
+  zIndex: "3",
+  opacity: "1",
+}
+
+, {
+  top: "-1.15rem",
+  left: "2.2rem",
+  opacity: "0.4",
+  zIndex: "2",
+}
+
+, {
+  top: "-2.5rem",
+  left: "4rem",
+  opacity: "0.3",
+  zIndex: "1",
+}
+
+, {
+  top: "-3.5rem",
+  left: "6rem",
+  opacity: "0.2",
+  zIndex: "0",
+}
+]
 const ShiftingCarousel = () => {
   const [carouselSlide, setCarouselSlide] = useState(0);
   const [enlarged, setEnlarged] = useState(false);
@@ -120,28 +148,27 @@ const ShiftingCarousel = () => {
           let carouselClassConversion =
             carouselDataIndex + carouselSlide >= 0 &&
             carouselDataIndex + carouselSlide < 4
-              ? carouselDataIndex + carouselSlide
+              ? carouselStylesArray[carouselDataIndex + carouselSlide]
               : carouselDataIndex + carouselSlide === 4
-              ? 0
+              ? carouselStylesArray[0]
               : carouselDataIndex + carouselSlide === 5
-              ? 1
+              ? carouselStylesArray[1]
               : carouselDataIndex + carouselSlide === 6
-              ? 2
+              ? carouselStylesArray[2]
               : carouselDataIndex + carouselSlide === -1
-              ? 3
+              ? carouselStylesArray[3]
               : carouselDataIndex + carouselSlide === -2
-              ? 2
+              ? carouselStylesArray[2]
               : carouselDataIndex + carouselSlide === -3
-              ? 1
-              : carouselDataIndex + carouselSlide;
+              ? carouselStylesArray[1]
+              : carouselStylesArray[carouselDataIndex + carouselSlide];
 
           return (
             <div
               key={carouselDataIndex}
-              style={{position:"absolute"}}
-
-              className={`carousel-card-container position-absolute carousel-${carouselClassConversion}
-        }`}>
+              style={carouselClassConversion}
+              className={`carousel-card-container position-absolute`} 
+              >
               <div className="carousel-card-content card ">
                 <img
                   src={carouselData.carouselImg}
