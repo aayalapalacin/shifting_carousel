@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 
-export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide})=>{
+export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide,carouselData})=>{
     const [enlarged, setEnlarged] = useState(false);
 
   
     const handleCarouselSlideRight = () => {
       // function to make sure carousel slide index stays within [0] and [3]
-      if (carouselSlide + 1 < 4) {
+      if (carouselSlide + 1 <= carouselData.length) {
         return carouselSlide + 1;
       } else {
         return 0;
@@ -18,7 +18,7 @@ export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide})=>{
   
     const handleCarouselSlideLeft = () => {
       // function to make sure carousel slide index stays within [0] and [-3]
-      if (carouselSlide - 1 > -4) {
+      if (carouselSlide - 1 >= -carouselData.length) {
         return carouselSlide - 1;
       } else {
         return 0;
@@ -57,6 +57,7 @@ export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide})=>{
                    <FontAwesomeIcon icon={faArrowRight}/> 
 
         </button>
+        <h1>carousel slide: {carouselSlide}</h1>
       </span>
     )
 }
