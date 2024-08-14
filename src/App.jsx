@@ -8,13 +8,13 @@ function App() {
   const [carouselSlide, setCarouselSlide] = useState(0);
 
   return (
-    <>
+    <div>
       <ShiftingCarousel carouselSlide={carouselSlide} />
       <ShiftingCarouselBtn 
         carouselSlide={carouselSlide} 
         setCarouselSlide={setCarouselSlide}
         />
-    </>
+    </div>
   )
 }
 

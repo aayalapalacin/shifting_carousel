@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./shiftingCarousel.css";
 
 const playLearnCarouselData = [
@@ -13,17 +13,17 @@ const playLearnCarouselData = [
       </ul>
     ),
   },
-  // {
-  //   carouselImg:"https://picsum.photos/id/200/200",
-  //   carouselTitle: "test",
-  //   carouselDescrtiption: (
-  //     <ul>
-  //       <li>8+ cribs for naptime</li>
-  //       <li>8+ strollers for enjoying outdoors</li>
-  //       <li>50+ toys promoting development</li>
-  //     </ul>
-  //   ),
-  // },
+  {
+    carouselImg:"https://picsum.photos/id/200/200",
+    carouselTitle: "test",
+    carouselDescrtiption: (
+      <ul>
+        <li>8+ cribs for naptime</li>
+        <li>8+ strollers for enjoying outdoors</li>
+        <li>50+ toys promoting development</li>
+      </ul>
+    ),
+  },
   {
     carouselImg:"https://picsum.photos/id/2/200",
     carouselTitle: "Outdoor Area",
@@ -58,36 +58,99 @@ const playLearnCarouselData = [
       </ul>
     ),
   },
+  {
+    carouselImg:"https://picsum.photos/id/67/200",
+    carouselTitle: "Preschool Classroom",
+    carouselDescrtiption: (
+      <ul>
+        <li>Fish Tank that is regulated daily</li>
+        <li>10+ science kits</li>
+        <li>Art supplies for independent </li>
+      </ul>
+    ),
+  },
+  {
+    carouselImg:"https://picsum.photos/id/67/200",
+    carouselTitle: "Preschool Classroom",
+    carouselDescrtiption: (
+      <ul>
+        <li>Fish Tank that is regulated daily</li>
+        <li>10+ science kits</li>
+        <li>Art supplies for independent </li>
+      </ul>
+    ),
+  },
 ];
 
-let carouselStylesArray =[{
-  top: "0rem",
-  left: "0rem",
-  zIndex: "3",
-  opacity: "1",
-}
+// let carouselStylesArray =[
+//   {
+//     top: "0rem",
+//     left: "0rem",
+//     zIndex: "4",
+//     opacity: "1",
+//   }
+  
+//   ,
+//   {
+//     top: `-${playLearnCarouselData.length * .2}rem`,
+//     left: `${playLearnCarouselData.length * .28}rem`,
+//     zIndex: "3",
+//     opacity: "0.8",
+// }
 
-, {
-  top: "-1.15rem",
-  left: "2.2rem",
-  opacity: "0.4",
-  zIndex: "2",
-}
+// , 
+// {
+//   top: `-${playLearnCarouselData.length * .42}rem`,
+//   left: `${playLearnCarouselData.length * .56}rem`,
+//   opacity: "0.6",
+//   zIndex: "2",
+// }
 
-, {
-  top: "-2.5rem",
-  left: "4rem",
-  opacity: "0.3",
-  zIndex: "1",
-}
+// , {
+//   top: `-${playLearnCarouselData.length * .62}rem`,
+//   left: `${playLearnCarouselData.length * .84}rem`,
+//   opacity: "0.4",
+//   zIndex: "1",
+// }
 
-, {
-  top: "-3.5rem",
-  left: "6rem",
-  opacity: "0.2",
-  zIndex: "0",
+// , {
+//   top: `-${playLearnCarouselData.length*.8}rem`,
+//   left: `${playLearnCarouselData.length * 1.1}rem`,
+//   opacity: "0.2",
+//   zIndex: "0",
+// }
+// ]
+function calculateBaseValue(n) {
+  // Constants based on the equation derived earlier
+  const k = 4.5;
+  const c = 0.05;
+
+  // Calculate the base value using the equation b(n) = k / n + c
+  const baseValue = (k / n) + c;
+
+  return baseValue;
 }
-]
+let carouselStylesArray = playLearnCarouselData.map((_, index) => {
+  
+  const baseSpacing = calculateBaseValue(playLearnCarouselData.length);
+  // 6 items base = 0.8
+  // 5 item base = 1
+  // 4 items base =1.2
+  // 3 items base = 1.5
+  // 2 items base = 2.3
+  const top = `-${index * baseSpacing}rem`;
+  const right = `-${index * baseSpacing * 1.4}rem`;
+  const opacity = `${1 - index * 0.1}`;
+  const zIndex = `${playLearnCarouselData.length - index}`;
+  
+  return {
+    top,
+    right,
+    zIndex,
+    opacity,
+  };
+});
+
 const ShiftingCarousel = ({carouselSlide}) => {
 
 
@@ -122,7 +185,7 @@ const ShiftingCarousel = ({carouselSlide}) => {
           //
           let carouselClassConversion =
             carouselDataIndex + carouselSlide >= 0 &&
-            carouselDataIndex + carouselSlide < 4
+            carouselDataIndex + carouselSlide < 6
               ? carouselStylesArray[carouselDataIndex + carouselSlide]
               : carouselDataIndex + carouselSlide === 4
               ? carouselStylesArray[0]

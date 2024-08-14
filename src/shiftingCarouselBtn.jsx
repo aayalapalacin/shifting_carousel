@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 
 export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide})=>{
@@ -34,7 +34,7 @@ export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide})=>{
         <span className="carousel-btn-container">
         <button
           type="button"
-          style={{marginRight:"3rem"}}
+          style={{marginRight:"3rem"}}j
 
           className={`carousel-btn ${enlarged ? 'englarged2' : ''} color-sky border-sky-2 me-5`}
           onClick={() => {
@@ -54,8 +54,8 @@ export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide})=>{
           }
             }
             >
-              right
-          <i className="fa-solid fa-arrow-right"></i>
+                   <FontAwesomeIcon icon={faArrowRight}/> 
+
         </button>
       </span>
     )
