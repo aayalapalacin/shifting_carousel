@@ -31,9 +31,9 @@
   .carousel-btn-container {
     display: flex;
     justify-content: center;
-    gap: 3rem; /* Adjust the spacing between buttons */
     position: relative;
-    margin-top: 2rem; /* Adjust spacing as needed */
+    margin-top: 2rem; 
+    margin-bottom: 4rem;
   }
   
   .carousel-card-content {

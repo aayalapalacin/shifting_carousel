@@ -66,10 +66,10 @@ const ShiftingCarousel = ({carouselSlide, carouselData}) => {
 
   return (
     <div 
-    className="carousel-container  position-relative"
-    style={{position:"relative"}}
+      className="carousel-container  position-relative"
+      style={{position:"relative"}}
     >
-      <div 
+    <div 
       style={{position:"relative"}}
       className="position-relative carousel-card-container">
         {carouselData.map((carouselDataItem, carouselDataIndex) => {
@@ -100,27 +100,7 @@ const ShiftingCarousel = ({carouselSlide, carouselData}) => {
           //    11|  4
           //    12|  5
           //  
-          //
-          // let carouselClassConversion =
-          //   carouselDataIndex + carouselSlide >= 0 &&
-          //   carouselDataIndex + carouselSlide <= carouselStylesArray.length
-          //     ? carouselStylesArray[carouselDataIndex + carouselSlide]
-          //     : carouselDataIndex + carouselSlide === 4
-          //     ? carouselStylesArray[0]
-          //     : carouselDataIndex + carouselSlide === 5
-          //     ? carouselStylesArray[1]
-          //     : carouselDataIndex + carouselSlide === 6
-          //     ? carouselStylesArray[2]
-          //     : carouselDataIndex + carouselSlide === -1
-          //     ? carouselStylesArray[3]
-          //     : carouselDataIndex + carouselSlide === -2
-          //     ? carouselStylesArray[2]
-          //     : carouselDataIndex + carouselSlide === -3
-          //     ? carouselStylesArray[1]
-          //     : carouselStylesArray[carouselDataIndex + carouselSlide];
-            console.log("stylesArray: ",carouselStylesArray);
-            console.log("conversion: ", carouselClassConversion);
-            console.log("index: ",carouselDataIndex, "slide: ", carouselSlide)
+
             const stylesIndex = carouselClassConversion[`${carouselDataIndex + carouselSlide}`];
             let carouselStyles= carouselStylesArray[stylesIndex]
           return (

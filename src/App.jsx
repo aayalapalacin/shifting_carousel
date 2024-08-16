@@ -8,7 +8,7 @@ import {ShiftingCarouselBtn} from './shiftingCarouselBtn'
 const carouselDataBackup = [
   {
     carouselImg:"https://picsum.photos/id/90/200",
-    carouselTitle: "Infant Classroom",
+    carouselTitle: "Item 1",
     carouselDescrtiption: (
       <ul>
         <li>8+ cribs for naptime</li>
@@ -19,7 +19,7 @@ const carouselDataBackup = [
   },
   {
     carouselImg:"https://picsum.photos/id/200/200",
-    carouselTitle: "test",
+    carouselTitle: "Item 2",
     carouselDescrtiption: (
       <ul>
         <li>8+ cribs for naptime</li>
@@ -30,7 +30,7 @@ const carouselDataBackup = [
   },
   {
     carouselImg:"https://picsum.photos/id/2/200",
-    carouselTitle: "Outdoor Area",
+    carouselTitle: "Item 3",
     carouselDescrtiption: (
       <ul>
         <li>
@@ -42,7 +42,7 @@ const carouselDataBackup = [
   },
   {
     carouselImg:"https://picsum.photos/id/45/200",
-    carouselTitle: "Todddler Classroom",
+    carouselTitle: "Item 4",
     carouselDescrtiption: (
       <ul>
         <li>10+ Art project supplies</li>
@@ -53,7 +53,7 @@ const carouselDataBackup = [
   },
   {
     carouselImg:"https://picsum.photos/id/67/200",
-    carouselTitle: "Preschool Classroom",
+    carouselTitle: "Item 5",
     carouselDescrtiption: (
       <ul>
         <li>Fish Tank that is regulated daily</li>
@@ -64,7 +64,7 @@ const carouselDataBackup = [
   },
   {
     carouselImg:"https://picsum.photos/id/67/200",
-    carouselTitle: "Preschool Classroom",
+    carouselTitle: "Item 6",
     carouselDescrtiption: (
       <ul>
         <li>Fish Tank that is regulated daily</li>
@@ -75,7 +75,7 @@ const carouselDataBackup = [
   },
   {
     carouselImg:"https://picsum.photos/id/67/200",
-    carouselTitle: "Preschool Classroom",
+    carouselTitle: "Item 7",
     carouselDescrtiption: (
       <ul>
         <li>Fish Tank that is regulated daily</li>
@@ -93,6 +93,9 @@ function App() {
 
   return (
     <div>
+      <div className='title-container' style={{margin:"18rem 0rem 11rem 0rem"}}>
+        <h1>Shifting Carousel</h1>
+      </div>
       <ShiftingCarousel 
         carouselData={carouselData}
         carouselSlide={carouselSlide} 
@@ -102,24 +105,26 @@ function App() {
         carouselSlide={carouselSlide} 
         setCarouselSlide={setCarouselSlide}
         />
-        <div className='bg-secondary m-3 text-white p-2 w-25'>
-          Carousel Slide: {carouselSlide}
-        </div>
-        <div>
-          <label for="customRange2" className="form-label m-2">Number of Items</label>
-          <input 
-            value={numberOfItems} 
+        
+    
+        <div className='d-flex justify-content-center align-items-center m-3'>
+          <h5 className='items-title m-2'> Number of Items</h5>
+          <select  
             onChange={(e)=> {
-              setNumberOfItems(e.target.value)
-              setCarouselData(carouselDataBackup.slice(0,e.target.value))
-                }
-              } 
-              type="number" 
-              className="form-range text-dark p-2 w-25" 
-              min="2" 
-              max="7" 
-              id="customRange2"
-            />
+                setNumberOfItems(e.target.value)
+                setCarouselData(carouselDataBackup.slice(0,e.target.value))
+                  }
+                }  
+            className="form-select w-25 border-dark" 
+            aria-label="Default select example"
+          >
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option selected value={5}>5</option>
+            <option value={6}>6</option>
+            <option value={7}>7</option>
+          </select>
         </div>
     </div>
   )

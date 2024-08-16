@@ -8,21 +8,21 @@ export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide,carouselDat
 
   
     const handleCarouselSlideRight = () => {
-      // function to make sure carousel slide index stays within [0] and [3]
-      if (carouselSlide + 1 < carouselData.length) {
-        return carouselSlide + 1;
-      } else {
-        return 0;
-      }
+         // function to make sure carousel slide index stays within [0] and [-3]
+         if (carouselSlide - 1 > -carouselData.length) {
+          return carouselSlide - 1;
+        } else {
+          return 0;
+        }
     };
-  
+   
     const handleCarouselSlideLeft = () => {
-      // function to make sure carousel slide index stays within [0] and [-3]
-      if (carouselSlide - 1 > -carouselData.length) {
-        return carouselSlide - 1;
-      } else {
-        return 0;
-      }
+      // function to make sure carousel slide index stays within [0] and [3]
+        if (carouselSlide + 1 < carouselData.length) {
+          return carouselSlide + 1;
+        } else {
+          return 0;
+        }
     };
   
     const handleBtnAnimation = () => {
@@ -36,7 +36,7 @@ export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide,carouselDat
           type="button"
           style={{marginRight:"3rem"}}j
 
-          className={`carousel-btn ${enlarged ? 'englarged2' : ''} color-sky border-sky-2 me-5`}
+          className={`carousel-btn fs-3 ${enlarged ? 'englarged2' : ''} color-sky border-sky-2 me-5`}
           onClick={() => {
             setCarouselSlide(handleCarouselSlideLeft());
             handleBtnAnimation();
@@ -46,7 +46,7 @@ export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide,carouselDat
       
         <button
           type="button"
-          className={`carousel-btn ${enlarged ? 'englarged1' : ''} color-sky border-sky-2 `}
+          className={`carousel-btn fs-3 ${enlarged ? 'englarged1' : ''} color-sky border-sky-2 `}
           onClick={() => {
             setCarouselSlide(handleCarouselSlideRight())
           
