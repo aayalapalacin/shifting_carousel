@@ -5,7 +5,7 @@ import './App.css'
 import ShiftingCarousel from './shiftingCarousel'
 import {ShiftingCarouselBtn} from './shiftingCarouselBtn'
 
-const carouselData = [
+const carouselDataBackup = [
   {
     carouselImg:"https://picsum.photos/id/90/200",
     carouselTitle: "Infant Classroom",
@@ -88,6 +88,8 @@ const carouselData = [
 
 function App() {
   const [carouselSlide, setCarouselSlide] = useState(0);
+  const [numberOfItems,setNumberOfItems]=useState(5);
+  const [carouselData, setCarouselData]=useState(carouselDataBackup.slice(0,5));
 
   return (
     <div>
@@ -100,6 +102,25 @@ function App() {
         carouselSlide={carouselSlide} 
         setCarouselSlide={setCarouselSlide}
         />
+        <div className='bg-secondary m-3 text-white p-2 w-25'>
+          Carousel Slide: {carouselSlide}
+        </div>
+        <div>
+          <label for="customRange2" className="form-label m-2">Number of Items</label>
+          <input 
+            value={numberOfItems} 
+            onChange={(e)=> {
+              setNumberOfItems(e.target.value)
+              setCarouselData(carouselDataBackup.slice(0,e.target.value))
+                }
+              } 
+              type="number" 
+              className="form-range text-dark p-2 w-25" 
+              min="2" 
+              max="7" 
+              id="customRange2"
+            />
+        </div>
     </div>
   )
 }

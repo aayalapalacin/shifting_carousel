@@ -9,7 +9,7 @@ export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide,carouselDat
   
     const handleCarouselSlideRight = () => {
       // function to make sure carousel slide index stays within [0] and [3]
-      if (carouselSlide + 1 <= carouselData.length) {
+      if (carouselSlide + 1 < carouselData.length) {
         return carouselSlide + 1;
       } else {
         return 0;
@@ -18,7 +18,7 @@ export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide,carouselDat
   
     const handleCarouselSlideLeft = () => {
       // function to make sure carousel slide index stays within [0] and [-3]
-      if (carouselSlide - 1 >= -carouselData.length) {
+      if (carouselSlide - 1 > -carouselData.length) {
         return carouselSlide - 1;
       } else {
         return 0;
@@ -57,7 +57,6 @@ export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide,carouselDat
                    <FontAwesomeIcon icon={faArrowRight}/> 
 
         </button>
-        <h1>carousel slide: {carouselSlide}</h1>
       </span>
     )
 }
