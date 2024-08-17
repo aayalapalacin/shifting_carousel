@@ -2,8 +2,20 @@ import React, {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-
-export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide,carouselData})=>{
+export const ShiftingCarouselBtn = ({
+  carouselSlide, 
+  setCarouselSlide,
+  carouselData,
+  leftArrowBorderType,
+  leftArrowBorderSize,
+  leftArrowBorderColor,
+  leftArrowColor,
+  rightArrowBorderType,
+  rightArrowBorderSize,
+  rightArrowBorderColor,
+  rightArrowColor,
+})=>{
+  
     const [enlarged, setEnlarged] = useState(false);
 
   
@@ -34,9 +46,15 @@ export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide,carouselDat
         <span className="carousel-btn-container">
         <button
           type="button"
-          style={{marginRight:"3rem"}}j
-
-          className={`carousel-btn fs-3 ${enlarged ? 'englarged2' : ''} color-sky border-sky-2 me-5`}
+          style={{
+            marginRight:"3rem",
+            border:`
+            ${leftArrowBorderType ? leftArrowBorderType : "solid"} 
+            ${leftArrowBorderSize ? leftArrowBorderSize : "1.5px"} 
+            ${leftArrowBorderColor ? leftArrowBorderColor : "skyblue" }`,
+            color: `${leftArrowColor ? leftArrowColor : "skyblue"}`
+          }}
+          className={`carousel-btn fs-3 ${enlarged ? 'englarged2' : ''}  me-5`}
           onClick={() => {
             setCarouselSlide(handleCarouselSlideLeft());
             handleBtnAnimation();
@@ -46,10 +64,17 @@ export const ShiftingCarouselBtn = ({carouselSlide, setCarouselSlide,carouselDat
       
         <button
           type="button"
-          className={`carousel-btn fs-3 ${enlarged ? 'englarged1' : ''} color-sky border-sky-2 `}
+          style={{
+            marginRight:"3rem",
+            border:`
+            ${rightArrowBorderType ? rightArrowBorderType : "solid"} 
+            ${rightArrowBorderSize ? rightArrowBorderSize : "1.5px"} 
+            ${rightArrowBorderColor ? rightArrowBorderColor : "skyblue" }`,
+            color: `${rightArrowColor ? rightArrowColor : "skyblue"}`
+          }}
+          className={`carousel-btn fs-3 ${enlarged ? 'englarged1' : ''}  `}
           onClick={() => {
             setCarouselSlide(handleCarouselSlideRight())
-          
             handleBtnAnimation();
           }
             }

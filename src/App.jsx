@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import ShiftingCarousel from './shiftingCarousel'
-import {ShiftingCarouselBtn} from './shiftingCarouselBtn'
+
+import '../styles/App.css'
+import ShiftingCarousel from './components/shiftingCarousel'
+import {ShiftingCarouselBtn} from './components/shiftingCarouselBtn'
 
 const carouselDataBackup = [
   {
@@ -104,6 +103,15 @@ function App() {
         carouselData={carouselData}
         carouselSlide={carouselSlide} 
         setCarouselSlide={setCarouselSlide}
+        arrowSpic
+        leftArrowBorderType={"solid"}
+        leftArrowBorderSize={"2px"}
+        leftArrowBorderColor={"black"}
+        leftArrowColor={"red"}
+        rightArrowBorderType={"solid"}
+        rightArrowBorderSize={"2px"}
+        rightArrowBorderColor={"black"}
+        rightArrowColor={"red"}
         />
         
     

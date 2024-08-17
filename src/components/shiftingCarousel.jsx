@@ -1,5 +1,5 @@
 import React from "react";
-import "./shiftingCarousel.css";
+import "../../styles/shiftingCarousel.css";
 
 
 
