@@ -3,6 +3,7 @@ import { useState } from 'react'
 import '../styles/App.css'
 import ShiftingCarousel from './components/shiftingCarousel'
 import {ShiftingCarouselBtn} from './components/shiftingCarouselBtn'
+import CarouselDemo from './components/carouselDemo';
 
 const carouselDataBackup = [
   {
@@ -87,7 +88,12 @@ const carouselDataBackup = [
 
 function App() {
   const [carouselSlide, setCarouselSlide] = useState(0);
-  const [numberOfItems,setNumberOfItems]=useState(5);
+  const [arrowLeftColor, setArrowLeftColor] = useState("#000066");
+  const [arrowLeftBorderColor, setArrowLeftBorderColor] = useState("#000066");
+  const [arrowLeftBGColor, setArrowLeftBGColor] = useState("#ccffff");
+  const [arrowRightColor, setArrowRightColor] = useState("#000066");
+  const [arrowRightBorderColor, setArrowRightBorderColor] = useState("#000066");
+  const [arrowRightBGColor, setArrowRightBGColor] = useState("#ccffff");
   const [carouselData, setCarouselData]=useState(carouselDataBackup.slice(0,5));
 
   return (
@@ -106,34 +112,31 @@ function App() {
         arrowSpic
         leftArrowBorderType={"solid"}
         leftArrowBorderSize={"2px"}
-        leftArrowBorderColor={"black"}
-        leftArrowColor={"red"}
+        leftArrowBGColor={arrowLeftBGColor}
+        leftArrowBorderColor={arrowLeftBorderColor}
+        leftArrowColor={arrowLeftColor}
         rightArrowBorderType={"solid"}
         rightArrowBorderSize={"2px"}
-        rightArrowBorderColor={"black"}
-        rightArrowColor={"red"}
+        rightArrowBorderColor={arrowRightBorderColor}
+        rightArrowColor={arrowRightColor}
+        arrowRightBGColor={arrowRightBGColor}
         />
-        
-    
-        <div className='d-flex justify-content-center align-items-center m-3'>
-          <h5 className='items-title m-2'> Number of Items</h5>
-          <select  
-            onChange={(e)=> {
-                setNumberOfItems(e.target.value)
-                setCarouselData(carouselDataBackup.slice(0,e.target.value))
-                  }
-                }  
-            className="form-select w-25 border-dark" 
-            aria-label="Default select example"
-          >
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option selected value={5}>5</option>
-            <option value={6}>6</option>
-            <option value={7}>7</option>
-          </select>
-        </div>
+      <CarouselDemo 
+        setCarouselData={setCarouselData} 
+        carouselDataBackup={carouselDataBackup}
+        setArrowLeftBorderColor={setArrowLeftBorderColor}
+        setArrowLeftBGColor={setArrowLeftBGColor}
+        setArrowLeftColor={setArrowLeftColor}
+        arrowLeftBorderColor={arrowLeftBorderColor}
+        arrowLeftBGColor={arrowLeftBGColor}
+        arrowLeftColor={arrowLeftColor}
+        setArrowRightBorderColor={setArrowRightBorderColor}
+        setArrowRightBGColor={setArrowRightBGColor}
+        setArrowRightColor={setArrowRightColor}
+        arrowRightBorderColor={arrowRightBorderColor}
+        arrowRightBGColor={arrowRightBGColor}
+        arrowRightColor={arrowRightColor}
+        />
     </div>
   )
 }

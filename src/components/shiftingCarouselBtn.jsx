@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import PropTypes from 'prop-types';
+
 
 export const ShiftingCarouselBtn = ({
   carouselSlide, 
@@ -10,10 +12,12 @@ export const ShiftingCarouselBtn = ({
   leftArrowBorderSize,
   leftArrowBorderColor,
   leftArrowColor,
+  leftArrowBGColor,
   rightArrowBorderType,
   rightArrowBorderSize,
   rightArrowBorderColor,
   rightArrowColor,
+  arrowRightBGColor
 })=>{
   
     const [enlarged, setEnlarged] = useState(false);
@@ -52,7 +56,8 @@ export const ShiftingCarouselBtn = ({
             ${leftArrowBorderType ? leftArrowBorderType : "solid"} 
             ${leftArrowBorderSize ? leftArrowBorderSize : "1.5px"} 
             ${leftArrowBorderColor ? leftArrowBorderColor : "skyblue" }`,
-            color: `${leftArrowColor ? leftArrowColor : "skyblue"}`
+            color: `${leftArrowColor ? leftArrowColor : "skyblue"}`,
+            backgroundColor: `${leftArrowBGColor ? leftArrowBGColor : "white"}`
           }}
           className={`carousel-btn fs-3 ${enlarged ? 'englarged2' : ''}  me-5`}
           onClick={() => {
@@ -65,12 +70,12 @@ export const ShiftingCarouselBtn = ({
         <button
           type="button"
           style={{
-            marginRight:"3rem",
             border:`
             ${rightArrowBorderType ? rightArrowBorderType : "solid"} 
             ${rightArrowBorderSize ? rightArrowBorderSize : "1.5px"} 
             ${rightArrowBorderColor ? rightArrowBorderColor : "skyblue" }`,
-            color: `${rightArrowColor ? rightArrowColor : "skyblue"}`
+            color: `${rightArrowColor ? rightArrowColor : "skyblue"}`,
+            backgroundColor: `${arrowRightBGColor ? arrowRightBGColor : "white"}`,
           }}
           className={`carousel-btn fs-3 ${enlarged ? 'englarged1' : ''}  `}
           onClick={() => {
@@ -85,3 +90,18 @@ export const ShiftingCarouselBtn = ({
       </span>
     )
 }
+ShiftingCarouselBtn.propTypes = {
+  carouselSlide: PropTypes.string.isRequired, 
+  setCarouselSlide: PropTypes.func.isRequired,
+  carouselData: PropTypes.array.isRequired,
+  leftArrowBorderType: PropTypes.string.isRequired,
+  leftArrowBorderSize: PropTypes.string.isRequired,
+  leftArrowBorderColor: PropTypes.string.isRequired,
+  leftArrowColor: PropTypes.string.isRequired,
+  leftArrowBGColor: PropTypes.string.isRequired,
+  rightArrowBorderType: PropTypes.string.isRequired,
+  rightArrowBorderSize: PropTypes.string.isRequired,
+  rightArrowBorderColor: PropTypes.string.isRequired,
+  rightArrowColor: PropTypes.string.isRequired,
+  arrowRightBGColor: PropTypes.string.isRequired,
+};
