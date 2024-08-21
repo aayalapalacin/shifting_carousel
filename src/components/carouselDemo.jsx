@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 
+const borderTypes=["solid","dotted","dashed","double","groove","ridge","inset","outset","none","hidden"]
+
 
 function CarouselDemo(
   {setCarouselData,
@@ -11,18 +13,25 @@ function CarouselDemo(
   arrowLeftBorderColor,
   arrowLeftBGColor,
   arrowLeftColor,
+  arrowLeftBorderSize,
+  setArrowLeftBorderSize,
+
   setArrowRightBGColor, 
   setArrowRightBorderColor,
   setArrowRightColor,
   arrowRightBorderColor,
   arrowRightBGColor,
   arrowRightColor,
+  arrowRightBorderSize,
+  setArrowRightBorderSize,
+  setLeftBorderType,
+  setRightBorderType,
   } 
   ) 
 {
 
   return (
-    <div>
+    <div className='carousel-demo-container w-75 m-auto'>
 
         <div className=' border border-1 p-4 d-flex input-group justify-content-center align-items-center m-3'>
           <h5 className='items-title m-2'> Number of Items</h5>
@@ -42,7 +51,7 @@ function CarouselDemo(
             <option value={7}>7</option>
           </select>
         </div>
-        <div className='arrow-left-container m-3 border border-1 p-4 input-group'>
+        <div className='arrow-left-container justify-content-center align-items-center m-3 border border-1 p-4 input-group'>
           <div className="arrow-left-color d-flex m-3">
                 <label className='me-2'  htmlFor="arrow-left-color">Arrow Left Color</label>
                 <input 
@@ -61,7 +70,6 @@ function CarouselDemo(
                 id='arrow-left-border'
               />
           </div>
-
           <div className='arrow-left-bg-color d-flex m-3'>
             <label className='me-2' htmlFor='arrow-left-bg-color'>Arrow Left BG Color</label>
             <input 
@@ -71,9 +79,43 @@ function CarouselDemo(
               id='arrow-left-bg-color'
             />
           </div>
-
+          <div className='arrow-left-border-size'>
+            <label htmlFor="arrow-left-border-size">Border size</label>
+            <input 
+              type="number"
+              min="0.5" 
+              step="0.5" 
+              max="6" 
+              className='border-input'
+              value={arrowLeftBorderSize}
+              onChange={(e)=> setArrowLeftBorderSize(e.target.value)}
+            />
+          </div>
+          <div className='arrow-left-border-type'>
+          <h5 className='items-title m-2'> Border Type</h5>
+          <select  
+            onChange={(e)=> {
+                setLeftBorderType(e.target.value)
+                  }
+                }  
+            className="form-select  border-dark" 
+            aria-label="Border Type"
+          >
+            {borderTypes.map((border,borderIndex)=>{
+              return(
+                <option
+                  key={borderIndex+"borderIndex"} 
+                  value={border}
+                >
+                  {border}
+                </option>                
+              )
+            })}
+        
+          </select>
+          </div>
         </div>
-        <div className='arrow-right-container border m-3 border-1 p-4 input-group'>
+        <div className='arrow-right-container justify-content-center align-items-center border m-3 border-1 p-4 input-group'>
           <div className="arrow-right-color d-flex m-3">
                 <label className='me-2'  htmlFor="arrow-right-color">Arrow Right Color</label>
                 <input 
@@ -102,7 +144,42 @@ function CarouselDemo(
               id='arrow-right-bg-color'
             />
           </div>
-
+          <div className='arrow-right-border-size'>
+            <label htmlFor="arrow-right-border-size">Border size</label>
+            <input 
+              type="number"
+              min="0.5" 
+              step="0.5" 
+              max="6" 
+              className='border-input'
+              value={arrowRightBorderSize}
+              onChange={(e)=> setArrowRightBorderSize(e.target.value)}
+            />
+          </div>
+          <div className='arrow-right-border-type'>
+            <h5 className='items-title m-2'> Border Type</h5>
+            <select  
+              onChange={(e)=> {
+                  setRightBorderType(e.target.value)
+                    }
+                  }  
+              className="form-select  border-dark" 
+              aria-label="Border Type"
+            >
+              {borderTypes.map((border,borderIndex)=>{
+                return(
+                  <option
+                    key={borderIndex+"borderIndex"} 
+                    value={border}
+                  >
+                    {border}
+                  </option>
+                  
+                )
+              })}
+          
+            </select>
+          </div>
         </div>
     </div>
   )
@@ -114,6 +191,8 @@ CarouselDemo.propTypes = {
   setArrowLeftColor: PropTypes.func.isRequired,
   setArrowLeftBorderColor: PropTypes.func.isRequired,
   arrowLeftBorderColor: PropTypes.string.isRequired,
+  setLeftBorderType: PropTypes.func.isRequired,
+  setRightBorderType: PropTypes.func.isRequired,
   arrowLeftBGColor: PropTypes.string.isRequired,
   arrowLeftColor: PropTypes.string.isRequired,
   setArrowRightBGColor: PropTypes.func.isRequired,
@@ -123,6 +202,10 @@ CarouselDemo.propTypes = {
   arrowRightBGColor: PropTypes.string.isRequired,
   arrowRightColor: PropTypes.string.isRequired,
   carouselDataBackup: PropTypes.array.isRequired,
+  arrowLeftBorderSize: PropTypes.string.isRequired,
+  setArrowLeftBorderSize: PropTypes.func.isRequired,
+  arrowRightBorderSize: PropTypes.string.isRequired,
+  setArrowRightBorderSize: PropTypes.func.isRequired,
 };
 
 export default CarouselDemo

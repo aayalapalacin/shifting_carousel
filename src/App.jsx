@@ -88,13 +88,22 @@ const carouselDataBackup = [
 
 function App() {
   const [carouselSlide, setCarouselSlide] = useState(0);
-  const [arrowLeftColor, setArrowLeftColor] = useState("#000066");
-  const [arrowLeftBorderColor, setArrowLeftBorderColor] = useState("#000066");
-  const [arrowLeftBGColor, setArrowLeftBGColor] = useState("#ccffff");
-  const [arrowRightColor, setArrowRightColor] = useState("#000066");
-  const [arrowRightBorderColor, setArrowRightBorderColor] = useState("#000066");
-  const [arrowRightBGColor, setArrowRightBGColor] = useState("#ccffff");
   const [carouselData, setCarouselData]=useState(carouselDataBackup.slice(0,5));
+ 
+  const [arrowLeftColor, setArrowLeftColor] = useState("#000066");
+  const [arrowLeftBGColor, setArrowLeftBGColor] = useState("#ccffff");
+
+  const [arrowRightColor, setArrowRightColor] = useState("#000066");
+  const [arrowRightBGColor, setArrowRightBGColor] = useState("#ccffff");
+
+  const [arrowLeftBorderSize, setArrowLeftBorderSize] = useState("1");
+  const [arrowRightBorderSize, setArrowRightBorderSize] = useState("1");
+  const [arrowRightBorderColor, setArrowRightBorderColor] = useState("#000066");
+  const [arrowLeftBorderColor, setArrowLeftBorderColor] = useState("#000066");
+  const [leftBorderType, setLeftBorderType] = useState("solid");
+  const [rightBorderType, setRightBorderType] = useState("solid");
+
+
 
   return (
     <div>
@@ -109,31 +118,46 @@ function App() {
         carouselData={carouselData}
         carouselSlide={carouselSlide} 
         setCarouselSlide={setCarouselSlide}
-        arrowSpic
-        leftArrowBorderType={"solid"}
-        leftArrowBorderSize={"2px"}
-        leftArrowBGColor={arrowLeftBGColor}
+
         leftArrowBorderColor={arrowLeftBorderColor}
-        leftArrowColor={arrowLeftColor}
-        rightArrowBorderType={"solid"}
-        rightArrowBorderSize={"2px"}
         rightArrowBorderColor={arrowRightBorderColor}
+        leftArrowBorderType={"solid"}
+        rightArrowBorderType={"solid"}
+        arrowRightBorderSize={arrowRightBorderSize}
+        arrowLeftBorderSize={arrowLeftBorderSize}
+        leftBorderType={leftBorderType}
+        rightBorderType={rightBorderType}
+
+        
+        leftArrowBGColor={arrowLeftBGColor}
+        leftArrowColor={arrowLeftColor}
         rightArrowColor={arrowRightColor}
         arrowRightBGColor={arrowRightBGColor}
         />
+        
       <CarouselDemo 
         setCarouselData={setCarouselData} 
         carouselDataBackup={carouselDataBackup}
+        
         setArrowLeftBorderColor={setArrowLeftBorderColor}
+        setArrowRightBorderColor={setArrowRightBorderColor}
+        arrowLeftBorderColor={arrowLeftBorderColor}
+        arrowRightBorderColor={arrowRightBorderColor}
+        arrowLeftBorderSize={arrowLeftBorderSize}
+        arrowRightBorderSize={arrowRightBorderSize}
+        setArrowLeftBorderSize={setArrowLeftBorderSize}
+        setArrowRightBorderSize={setArrowRightBorderSize}
+        setLeftBorderType={setLeftBorderType}
+        setRightBorderType={setRightBorderType}
+   
+       
         setArrowLeftBGColor={setArrowLeftBGColor}
         setArrowLeftColor={setArrowLeftColor}
-        arrowLeftBorderColor={arrowLeftBorderColor}
         arrowLeftBGColor={arrowLeftBGColor}
         arrowLeftColor={arrowLeftColor}
-        setArrowRightBorderColor={setArrowRightBorderColor}
+
         setArrowRightBGColor={setArrowRightBGColor}
         setArrowRightColor={setArrowRightColor}
-        arrowRightBorderColor={arrowRightBorderColor}
         arrowRightBGColor={arrowRightBGColor}
         arrowRightColor={arrowRightColor}
         />

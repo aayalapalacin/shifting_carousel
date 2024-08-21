@@ -8,16 +8,18 @@ export const ShiftingCarouselBtn = ({
   carouselSlide, 
   setCarouselSlide,
   carouselData,
-  leftArrowBorderType,
-  leftArrowBorderSize,
+
+  leftBorderType,
+  rightBorderType,
+  arrowLeftBorderSize,
+  arrowRightBorderSize,
   leftArrowBorderColor,
+
+  rightArrowBorderColor,
   leftArrowColor,
   leftArrowBGColor,
-  rightArrowBorderType,
-  rightArrowBorderSize,
-  rightArrowBorderColor,
   rightArrowColor,
-  arrowRightBGColor
+  arrowRightBGColor,
 })=>{
   
     const [enlarged, setEnlarged] = useState(false);
@@ -53,8 +55,8 @@ export const ShiftingCarouselBtn = ({
           style={{
             marginRight:"3rem",
             border:`
-            ${leftArrowBorderType ? leftArrowBorderType : "solid"} 
-            ${leftArrowBorderSize ? leftArrowBorderSize : "1.5px"} 
+            ${leftBorderType ? leftBorderType : "solid"} 
+            ${arrowLeftBorderSize ? arrowLeftBorderSize+"px" : "1px"} 
             ${leftArrowBorderColor ? leftArrowBorderColor : "skyblue" }`,
             color: `${leftArrowColor ? leftArrowColor : "skyblue"}`,
             backgroundColor: `${leftArrowBGColor ? leftArrowBGColor : "white"}`
@@ -71,8 +73,8 @@ export const ShiftingCarouselBtn = ({
           type="button"
           style={{
             border:`
-            ${rightArrowBorderType ? rightArrowBorderType : "solid"} 
-            ${rightArrowBorderSize ? rightArrowBorderSize : "1.5px"} 
+            ${rightBorderType ? rightBorderType : "solid"} 
+            ${arrowRightBorderSize ? arrowRightBorderSize+"px" : "1px"} 
             ${rightArrowBorderColor ? rightArrowBorderColor : "skyblue" }`,
             color: `${rightArrowColor ? rightArrowColor : "skyblue"}`,
             backgroundColor: `${arrowRightBGColor ? arrowRightBGColor : "white"}`,
@@ -94,14 +96,17 @@ ShiftingCarouselBtn.propTypes = {
   carouselSlide: PropTypes.string.isRequired, 
   setCarouselSlide: PropTypes.func.isRequired,
   carouselData: PropTypes.array.isRequired,
-  leftArrowBorderType: PropTypes.string.isRequired,
-  leftArrowBorderSize: PropTypes.string.isRequired,
+
+  leftBorderType: PropTypes.string.isRequired,
+  rightBorderType: PropTypes.string.isRequired,
+  rightArrowBorderType: PropTypes.string.isRequired,
+  arrowLeftBorderSize: PropTypes.string.isRequired,
+  arrowRightBorderSize: PropTypes.string.isRequired,
+  rightArrowBorderColor: PropTypes.string.isRequired,
   leftArrowBorderColor: PropTypes.string.isRequired,
+  
   leftArrowColor: PropTypes.string.isRequired,
   leftArrowBGColor: PropTypes.string.isRequired,
-  rightArrowBorderType: PropTypes.string.isRequired,
-  rightArrowBorderSize: PropTypes.string.isRequired,
-  rightArrowBorderColor: PropTypes.string.isRequired,
   rightArrowColor: PropTypes.string.isRequired,
   arrowRightBGColor: PropTypes.string.isRequired,
 };
