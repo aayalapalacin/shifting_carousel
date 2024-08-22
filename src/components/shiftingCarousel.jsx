@@ -1,9 +1,11 @@
 import React from "react";
 import "../../styles/shiftingCarousel.css";
+import PropTypes from 'prop-types';
 
 
 
-const ShiftingCarousel = ({carouselSlide, carouselData}) => {
+
+const ShiftingCarousel = ({carouselSlide, carouselData, cardWidth, cardHeight}) => {
 
   function calculateBaseValue(n) {
     // Constants based on the equation derived earlier
@@ -69,6 +71,7 @@ const ShiftingCarousel = ({carouselSlide, carouselData}) => {
       className="carousel-container  position-relative"
       style={{position:"relative"}}
     >
+          
     <div 
       style={{position:"relative"}}
       className="position-relative carousel-card-container">
@@ -109,10 +112,14 @@ const ShiftingCarousel = ({carouselSlide, carouselData}) => {
               style={carouselStyles}
               className={`carousel-card-container position-absolute`} 
               >
-              <div className="carousel-card-content card ">
+              <div 
+                className="carousel-card-content card "
+                style={{width: `${cardWidth}rem`}}
+              >
                 <img
                   src={carouselDataItem.carouselImg}
                   className="card-img-top"
+                  style={{height: `${cardHeight}rem`}}
                   alt={carouselDataItem.carouselTitle}
                 />
                 <div className="card-body">
@@ -132,4 +139,12 @@ const ShiftingCarousel = ({carouselSlide, carouselData}) => {
   );
 };
 
+
+ShiftingCarousel.propTypes = {
+  carouselSlide: PropTypes.string.isRequired, 
+  carouselData: PropTypes.array.isRequired,
+  cardWidth: PropTypes.number.isRequired,
+  cardHeight: PropTypes.number.isRequired,
+
+};
 export default ShiftingCarousel;

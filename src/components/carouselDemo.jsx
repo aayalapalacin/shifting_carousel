@@ -7,6 +7,10 @@ const borderTypes=["solid","dotted","dashed","double","groove","ridge","inset","
 function CarouselDemo(
   {setCarouselData,
   carouselDataBackup,
+  cardWidth,
+  setCardWidth,
+  cardHeight,
+  setCardHeight,
   setArrowLeftBGColor, 
   setArrowLeftBorderColor,
   setArrowLeftColor,
@@ -32,24 +36,49 @@ function CarouselDemo(
 
   return (
     <div className='carousel-demo-container w-75 m-auto'>
+          <h3>Card Styles</h3>
+        <div className=' cardContainer border border-1 p-4 d-flex input-group justify-content-center align-items-center m-3'>
+          <div className='card-number-items'>
 
-        <div className=' border border-1 p-4 d-flex input-group justify-content-center align-items-center m-3'>
-          <h5 className='items-title m-2'> Number of Items</h5>
-          <select  
-            onChange={(e)=> {
-                setCarouselData(carouselDataBackup.slice(0,e.target.value))
-                  }
-                }  
-            className="form-select w-25 border-dark" 
-            aria-label="Default select example"
-          >
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option selected value={5}>5</option>
-            <option value={6}>6</option>
-            <option value={7}>7</option>
-          </select>
+            <h5 className='items-title m-2'> Number of Items</h5>
+            <select  
+              onChange={(e)=> {
+                  setCarouselData(carouselDataBackup.slice(0,e.target.value))
+                    }
+                  }  
+              className="form-select w-50 border-dark" 
+              aria-label="Default select example"
+            >
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option selected value={5}>5</option>
+              <option value={6}>6</option>
+              <option value={7}>7</option>
+            </select>
+          </div>
+          <div className='card-width me-3'>
+            <label htmlFor="card-width-range" className="form-label">Card Width: {cardWidth}</label>
+            <input 
+              type="range" 
+              min="15"
+              max="45"
+              value={cardWidth} 
+              onChange={(e)=> setCardWidth(e.target.value)} 
+              className="form-range" 
+              id="card-width-range"/>
+          </div>
+          <div className='card-height'>
+            <label htmlFor="card-height-range" className="form-label">Card Height: {cardHeight}</label>
+            <input 
+              type="range" 
+              min="15"
+              max="45"
+              value={cardHeight} 
+              onChange={(e)=> setCardHeight(e.target.value)} 
+              className="form-range" 
+              id="card-height-range"/>
+          </div>
         </div>
         <div className='arrow-left-container justify-content-center align-items-center m-3 border border-1 p-4 input-group'>
           <div className="arrow-left-color d-flex m-3">
@@ -186,7 +215,12 @@ function CarouselDemo(
 }
 
 CarouselDemo.propTypes = {
+  
   setCarouselData: PropTypes.func.isRequired,
+  cardWidth: PropTypes.number.isRequired,
+  setCardWidth: PropTypes.func.isRequired,
+  cardHeight: PropTypes.number.isRequired,
+  setCardHeight: PropTypes.func.isRequired,
   setArrowLeftBGColor: PropTypes.func.isRequired,
   setArrowLeftColor: PropTypes.func.isRequired,
   setArrowLeftBorderColor: PropTypes.func.isRequired,

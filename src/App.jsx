@@ -90,6 +90,9 @@ function App() {
   const [carouselSlide, setCarouselSlide] = useState(0);
   const [carouselData, setCarouselData]=useState(carouselDataBackup.slice(0,5));
  
+  const [cardWidth, setCardWidth] = useState(24);
+  const [cardHeight, setCardHeight] = useState(17);
+  
   const [arrowLeftColor, setArrowLeftColor] = useState("#000066");
   const [arrowLeftBGColor, setArrowLeftBGColor] = useState("#ccffff");
 
@@ -107,12 +110,14 @@ function App() {
 
   return (
     <div>
-      <div className='title-container' style={{margin:"18rem 0rem 11rem 0rem"}}>
+      <div className='title-container' style={{margin:"18rem 0rem 31rem 0rem"}}>
         <h1>Shifting Carousel</h1>
       </div>
       <ShiftingCarousel 
         carouselData={carouselData}
-        carouselSlide={carouselSlide} 
+        carouselSlide={carouselSlide}
+        cardWidth={cardWidth} 
+        cardHeight={cardHeight} 
       />
       <ShiftingCarouselBtn 
         carouselData={carouselData}
@@ -138,6 +143,10 @@ function App() {
       <CarouselDemo 
         setCarouselData={setCarouselData} 
         carouselDataBackup={carouselDataBackup}
+        cardWidth={cardWidth} 
+        setCardWidth={setCardWidth} 
+        cardHeight={cardHeight} 
+        setCardHeight={setCardHeight} 
         
         setArrowLeftBorderColor={setArrowLeftBorderColor}
         setArrowRightBorderColor={setArrowRightBorderColor}
