@@ -34,9 +34,16 @@ function CarouselDemo(
   ) 
 {
 
+  const[arrowStylesView, setArrowStylesView]=useState(false);
+  const[cardStylesView, setCardStylesView]=useState(false);
+
   return (
     <div className='carousel-demo-container w-75 m-auto'>
-          <h3>Card Styles</h3>
+          <div className="card-title form-check form-switch d-flex justify-content-center align-items-center">
+          <h3 className='me-5'>Card Styles</h3>
+          <input onChange={()=> setCardStylesView(!cardStylesView)} className="form-check-input  border-secondary" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+        </div>    
+       {cardStylesView ? 
         <div className=' cardContainer border border-1 p-4 d-flex input-group justify-content-center align-items-center m-3'>
           <div className='card-number-items'>
 
@@ -72,14 +79,22 @@ function CarouselDemo(
             <label htmlFor="card-height-range" className="form-label">Card Height: {cardHeight}</label>
             <input 
               type="range" 
-              min="15"
-              max="45"
+              // min="15"
+              // max="45"
               value={cardHeight} 
               onChange={(e)=> setCardHeight(e.target.value)} 
               className="form-range" 
               id="card-height-range"/>
           </div>
         </div>
+       :
+       ""}   
+        <div className="arrow-title form-check form-switch d-flex justify-content-center align-items-center">
+          <h3 className='me-5'>Arrow Styles</h3>
+          <input onChange={()=> setArrowStylesView(!arrowStylesView)} className="form-check-input  border-secondary" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+        </div>    
+      {arrowStylesView ? 
+      <>
         <div className='arrow-left-container justify-content-center align-items-center m-3 border border-1 p-4 input-group'>
           <div className="arrow-left-color d-flex m-3">
                 <label className='me-2'  htmlFor="arrow-left-color">Arrow Left Color</label>
@@ -210,6 +225,9 @@ function CarouselDemo(
             </select>
           </div>
         </div>
+      </>
+      : 
+      ""}    
     </div>
   )
 }
