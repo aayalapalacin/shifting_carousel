@@ -123,6 +123,7 @@ function App() {
         carouselData={carouselData}
         carouselSlide={carouselSlide} 
         setCarouselSlide={setCarouselSlide}
+        cardHeight={cardHeight} 
 
         leftArrowBorderColor={arrowLeftBorderColor}
         rightArrowBorderColor={arrowRightBorderColor}

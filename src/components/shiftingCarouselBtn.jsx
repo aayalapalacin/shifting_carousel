@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types';
@@ -14,7 +14,7 @@ export const ShiftingCarouselBtn = ({
   arrowLeftBorderSize,
   arrowRightBorderSize,
   leftArrowBorderColor,
-
+  cardHeight,
   rightArrowBorderColor,
   leftArrowColor,
   leftArrowBGColor,
@@ -23,8 +23,11 @@ export const ShiftingCarouselBtn = ({
 })=>{
   
     const [enlarged, setEnlarged] = useState(false);
+    const [marginTopCalc, setMarginTopCalc] = useState(0);
 
-  
+  useEffect(()=>{
+    setMarginTopCalc(cardHeight - 15);
+  },[cardHeight]);
     const handleCarouselSlideRight = () => {
          // function to make sure carousel slide index stays within [0] and [-3]
          if (carouselSlide - 1 > -carouselData.length) {
@@ -49,7 +52,11 @@ export const ShiftingCarouselBtn = ({
     };
   
     return(
-        <span className="carousel-btn-container">
+        <span 
+          className="carousel-btn-container"
+          style={{marginTop: `${marginTopCalc}rem`}}
+        >
+         
         <button
           type="button"
           style={{
@@ -104,7 +111,7 @@ ShiftingCarouselBtn.propTypes = {
   arrowRightBorderSize: PropTypes.string.isRequired,
   rightArrowBorderColor: PropTypes.string.isRequired,
   leftArrowBorderColor: PropTypes.string.isRequired,
-  
+  cardHeight: PropTypes.string.isRequired,
   leftArrowColor: PropTypes.string.isRequired,
   leftArrowBGColor: PropTypes.string.isRequired,
   rightArrowColor: PropTypes.string.isRequired,

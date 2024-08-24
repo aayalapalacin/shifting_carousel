@@ -79,8 +79,8 @@ function CarouselDemo(
             <label htmlFor="card-height-range" className="form-label">Card Height: {cardHeight}</label>
             <input 
               type="range" 
-              // min="15"
-              // max="45"
+              min="10"
+              max="35"
               value={cardHeight} 
               onChange={(e)=> setCardHeight(e.target.value)} 
               className="form-range" 
