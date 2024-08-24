@@ -11,6 +11,7 @@ function CarouselDemo(
   setCardWidth,
   cardHeight,
   setCardHeight,
+  setBtnCardMargin,
   setArrowLeftBGColor, 
   setArrowLeftBorderColor,
   setArrowLeftColor,
@@ -85,6 +86,24 @@ function CarouselDemo(
               onChange={(e)=> setCardHeight(e.target.value)} 
               className="form-range" 
               id="card-height-range"/>
+          </div>
+          <div className='card-arrow-margin-items'>
+
+            <h5 className='items-title m-2'> Arrow Margin Top  </h5>
+            <select  
+              onChange={(e)=> {
+                setBtnCardMargin(e.target.value)
+                    }
+                  }  
+              className="form-select w-50 border-dark" 
+              aria-label="Button Margin Top"
+            >
+              <option value={1}>1</option>
+              <option value={1.5}>1.5</option>
+              <option selected value={2}>2</option>
+              <option value={2.5}>2.5</option>
+              <option value={3}>3</option>
+            </select>
           </div>
         </div>
        :
@@ -236,6 +255,8 @@ CarouselDemo.propTypes = {
   
   setCarouselData: PropTypes.func.isRequired,
   cardWidth: PropTypes.number.isRequired,
+  setBtnCardMargin: PropTypes.func.isRequired,
+
   setCardWidth: PropTypes.func.isRequired,
   cardHeight: PropTypes.number.isRequired,
   setCardHeight: PropTypes.func.isRequired,

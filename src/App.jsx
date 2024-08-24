@@ -92,7 +92,8 @@ function App() {
  
   const [cardWidth, setCardWidth] = useState(24);
   const [cardHeight, setCardHeight] = useState(17);
-  
+  const [btnCardMargin, setBtnCardMargin] = useState(2);
+
   const [arrowLeftColor, setArrowLeftColor] = useState("#000066");
   const [arrowLeftBGColor, setArrowLeftBGColor] = useState("#ccffff");
 
@@ -117,7 +118,8 @@ function App() {
         carouselData={carouselData}
         carouselSlide={carouselSlide}
         cardWidth={cardWidth} 
-        cardHeight={cardHeight} 
+        cardHeight={cardHeight}
+        btnCardMargin={btnCardMargin} 
       />
       <ShiftingCarouselBtn 
         carouselData={carouselData}
@@ -148,6 +150,7 @@ function App() {
         setCardWidth={setCardWidth} 
         cardHeight={cardHeight} 
         setCardHeight={setCardHeight} 
+        setBtnCardMargin={setBtnCardMargin}
         
         setArrowLeftBorderColor={setArrowLeftBorderColor}
         setArrowRightBorderColor={setArrowRightBorderColor}
