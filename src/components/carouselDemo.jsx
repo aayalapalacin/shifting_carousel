@@ -11,6 +11,9 @@ function CarouselDemo(
   setCardWidth,
   cardHeight,
   setCardHeight,
+  setCardAnimation,
+
+
   setBtnCardMargin,
   setArrowLeftBGColor, 
   setArrowLeftBorderColor,
@@ -45,7 +48,7 @@ function CarouselDemo(
           <input onChange={()=> setCardStylesView(!cardStylesView)} className="form-check-input  border-secondary" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
         </div>    
        {cardStylesView ? 
-        <div className=' cardContainer border border-1 p-4 d-flex input-group justify-content-center align-items-center m-3'>
+        <div className=' cardContainer border border-1 p-4 d-flex input-group justify-content-evenly align-items-center m-3'>
           <div className='card-number-items'>
 
             <h5 className='items-title m-2'> Number of Items</h5>
@@ -104,6 +107,24 @@ function CarouselDemo(
               <option value={2.5}>2.5</option>
               <option value={3}>3</option>
             </select>
+          </div>
+          <div className='card-animations-container'>
+
+            <h5 className='items-title m-2'> Card Transition time</h5>
+            <select  
+              onChange={(e)=> {
+                  setCardAnimation((e.target.value))
+                    }
+                  }  
+              className="form-select w-50 border-dark" 
+              aria-label="animation select"
+            >
+              <option value={.75}>.75</option>
+              <option selected value={1}>1</option>
+              <option value={1.25}>1.25</option>
+              <option value={ 1.5}>1.5</option>
+              <option value={1.75}>1.75</option>
+            </select> 
           </div>
         </div>
        :
@@ -256,6 +277,8 @@ CarouselDemo.propTypes = {
   setCarouselData: PropTypes.func.isRequired,
   cardWidth: PropTypes.number.isRequired,
   setBtnCardMargin: PropTypes.func.isRequired,
+  setCardAnimation: PropTypes.func.isRequired,
+
 
   setCardWidth: PropTypes.func.isRequired,
   cardHeight: PropTypes.number.isRequired,

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 
 
-const ShiftingCarousel = ({carouselSlide, carouselData, cardWidth, cardHeight}) => {
+const ShiftingCarousel = ({carouselSlide, carouselData, cardWidth, cardHeight, cardAnimation}) => {
 
   function calculateBaseValue(n) {
     // Constants based on the equation derived earlier
@@ -31,6 +31,7 @@ const ShiftingCarousel = ({carouselSlide, carouselData, cardWidth, cardHeight}) 
       right,
       zIndex,
       opacity,
+      transition: `top ${cardAnimation}s, right ${cardAnimation}s, opacity ${cardAnimation}s` // Add the transition here
     };
   }): null;
 
@@ -145,6 +146,7 @@ ShiftingCarousel.propTypes = {
   carouselData: PropTypes.array.isRequired,
   cardWidth: PropTypes.number.isRequired,
   cardHeight: PropTypes.number.isRequired,
+  cardAnimation: PropTypes.number.isRequired,
 
 };
 export default ShiftingCarousel;
