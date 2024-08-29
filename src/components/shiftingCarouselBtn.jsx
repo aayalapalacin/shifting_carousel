@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faArrowRight, faBookTanakh } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types';
 
 
@@ -8,6 +8,8 @@ export const ShiftingCarouselBtn = ({
   carouselSlide, 
   setCarouselSlide,
   carouselData,
+  btnCardMargin,
+
 
   leftBorderType,
   rightBorderType,
@@ -26,8 +28,12 @@ export const ShiftingCarouselBtn = ({
     const [marginTopCalc, setMarginTopCalc] = useState(0);
 
   useEffect(()=>{
-    setMarginTopCalc(cardHeight - 15);
-  },[cardHeight]);
+    const cardBtnDistance =  17 - btnCardMargin; 
+
+    setMarginTopCalc(cardHeight - cardBtnDistance);
+  },[cardHeight, btnCardMargin]);
+
+
     const handleCarouselSlideRight = () => {
          // function to make sure carousel slide index stays within [0] and [-3]
          if (carouselSlide - 1 > -carouselData.length) {
@@ -103,6 +109,7 @@ ShiftingCarouselBtn.propTypes = {
   carouselSlide: PropTypes.string.isRequired, 
   setCarouselSlide: PropTypes.func.isRequired,
   carouselData: PropTypes.array.isRequired,
+  btnCardMargin: PropTypes.number.isRequired,
 
   leftBorderType: PropTypes.string.isRequired,
   rightBorderType: PropTypes.string.isRequired,

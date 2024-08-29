@@ -119,13 +119,13 @@ function App() {
         carouselSlide={carouselSlide}
         cardWidth={cardWidth} 
         cardHeight={cardHeight}
-        btnCardMargin={btnCardMargin} 
       />
       <ShiftingCarouselBtn 
         carouselData={carouselData}
         carouselSlide={carouselSlide} 
         setCarouselSlide={setCarouselSlide}
         cardHeight={cardHeight} 
+        btnCardMargin={btnCardMargin} 
 
         leftArrowBorderColor={arrowLeftBorderColor}
         rightArrowBorderColor={arrowRightBorderColor}
