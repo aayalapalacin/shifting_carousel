@@ -34,6 +34,9 @@ function CarouselDemo(
   setArrowRightBorderSize,
   setLeftBorderType,
   setRightBorderType,
+
+  boxShadow,
+  setBoxShadow
   } 
   ) 
 {
@@ -135,7 +138,11 @@ function CarouselDemo(
         </div>    
       {arrowStylesView ? 
       <>
-        <div className='arrow-left-container justify-content-center align-items-center m-3 border border-1 p-4 input-group'>
+        <div className='arrow-left-container justify-content-center align-items-center m-3 mb-0 border border-1 p-4 input-group'>
+        <div className="arrow-box-shadow form-check form-switch d-flex justify-content-center align-items-center">
+          <h6 className='me-5'>Box Shadow</h6>
+          <input onChange={()=> setBoxShadow(!boxShadow)} className="form-check-input  border-secondary" type="checkbox" role="switch" />
+        </div>   
           <div className="arrow-left-color d-flex m-3">
                 <label className='me-2'  htmlFor="arrow-left-color">Arrow Left Color</label>
                 <input 
@@ -197,6 +204,9 @@ function CarouselDemo(
             })}
         
           </select>
+          </div>
+          <div className='arrow-box-shadow'>
+
           </div>
         </div>
         <div className='arrow-right-container justify-content-center align-items-center border m-3 border-1 p-4 input-group'>
@@ -302,6 +312,8 @@ CarouselDemo.propTypes = {
   setArrowLeftBorderSize: PropTypes.func.isRequired,
   arrowRightBorderSize: PropTypes.string.isRequired,
   setArrowRightBorderSize: PropTypes.func.isRequired,
+  boxShdow: PropTypes.bool.isRequired,
+  setBoxShadow: PropTypes.func.isRequired,
 };
 
 export default CarouselDemo

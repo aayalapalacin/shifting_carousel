@@ -179,6 +179,9 @@ function App() {
         setArrowRightColor={setArrowRightColor}
         arrowRightBGColor={arrowRightBGColor}
         arrowRightColor={arrowRightColor}
+
+        setBoxShadow={setBoxShadow}
+        boxShadow={boxShadow}
         />
     </div>
   )
