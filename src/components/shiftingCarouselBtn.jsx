@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faArrowRight, faBookTanakh } from '@fortawesome/free-solid-svg-icons'
+import React, {useState, useEffect} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
-
+import "../../styles/shiftingCarouselBtn.css";
 
 export const ShiftingCarouselBtn = ({
   carouselSlide, 
@@ -22,6 +22,8 @@ export const ShiftingCarouselBtn = ({
   leftArrowBGColor,
   rightArrowColor,
   arrowRightBGColor,
+
+  boxShadow
 })=>{
   
     const [enlarged, setEnlarged] = useState(false);
@@ -74,7 +76,7 @@ export const ShiftingCarouselBtn = ({
             color: `${leftArrowColor ? leftArrowColor : "skyblue"}`,
             backgroundColor: `${leftArrowBGColor ? leftArrowBGColor : "white"}`
           }}
-          className={`carousel-btn fs-3 ${enlarged ? 'englarged2' : ''}  me-5`}
+          className={`carousel-btn fs-3 ${enlarged ? 'englarged2' : ''} ${boxShadow ? "boxShadow" : ""}  me-5`}
           onClick={() => {
             setCarouselSlide(handleCarouselSlideLeft());
             handleBtnAnimation();
@@ -92,7 +94,7 @@ export const ShiftingCarouselBtn = ({
             color: `${rightArrowColor ? rightArrowColor : "skyblue"}`,
             backgroundColor: `${arrowRightBGColor ? arrowRightBGColor : "white"}`,
           }}
-          className={`carousel-btn fs-3 ${enlarged ? 'englarged1' : ''}  `}
+          className={`carousel-btn fs-3 ${enlarged ? 'englarged1' : ''} ${boxShadow ? "boxShadow" : ""}  `}
           onClick={() => {
             setCarouselSlide(handleCarouselSlideRight())
             handleBtnAnimation();

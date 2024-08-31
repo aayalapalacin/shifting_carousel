@@ -107,12 +107,13 @@ function App() {
   const [arrowLeftBorderColor, setArrowLeftBorderColor] = useState("#000066");
   const [leftBorderType, setLeftBorderType] = useState("solid");
   const [rightBorderType, setRightBorderType] = useState("solid");
+  const [boxShadow, setBoxShadow] = useState(true);
 
 
 
   return (
     <div>
-      <div className='title-container' style={{margin:"18rem 0rem 31rem 0rem"}}>
+      <div className='title-container' style={{margin:"0rem 0rem 31rem 0rem"}}>
         <h1>Shifting Carousel</h1>
       </div>
       <ShiftingCarousel 
@@ -143,6 +144,7 @@ function App() {
         leftArrowColor={arrowLeftColor}
         rightArrowColor={arrowRightColor}
         arrowRightBGColor={arrowRightBGColor}
+        boxShadow={boxShadow}
         />
         
       <CarouselDemo 
