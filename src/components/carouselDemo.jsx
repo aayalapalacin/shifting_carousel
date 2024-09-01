@@ -286,13 +286,13 @@ CarouselDemo.propTypes = {
   
   setCarouselData: PropTypes.func.isRequired,
   cardWidth: PropTypes.number.isRequired,
-  setBtnCardMargin: PropTypes.func.isRequired,
-  setCardAnimation: PropTypes.func.isRequired,
-
-
   setCardWidth: PropTypes.func.isRequired,
   cardHeight: PropTypes.number.isRequired,
   setCardHeight: PropTypes.func.isRequired,
+  
+  setBtnCardMargin: PropTypes.func.isRequired,
+  setCardAnimation: PropTypes.func.isRequired,
+
   setArrowLeftBGColor: PropTypes.func.isRequired,
   setArrowLeftColor: PropTypes.func.isRequired,
   setArrowLeftBorderColor: PropTypes.func.isRequired,

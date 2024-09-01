@@ -120,7 +120,7 @@ ShiftingCarouselBtn.propTypes = {
   arrowRightBorderSize: PropTypes.string.isRequired,
   rightArrowBorderColor: PropTypes.string.isRequired,
   leftArrowBorderColor: PropTypes.string.isRequired,
-  cardHeight: PropTypes.string.isRequired,
+  cardHeight: PropTypes.number.isRequired,
   leftArrowColor: PropTypes.string.isRequired,
   leftArrowBGColor: PropTypes.string.isRequired,
   rightArrowColor: PropTypes.string.isRequired,
