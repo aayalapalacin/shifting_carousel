@@ -116,14 +116,15 @@ function ShiftingCarouselMain() {
         <h1>Shifting Carousel</h1>
       </div>
       <ShiftingCarousel
-        carouselData={carouselData}
+        // carouselData={carouselData}
         carouselSlide={carouselSlide}
         cardWidth={cardWidth} 
         cardHeight={cardHeight}
         cardAnimation={cardAnimation}
       />
+      
       <ShiftingCarouselBtn 
-        carouselData={carouselData}
+        // carouselData={carouselData}
         carouselSlide={carouselSlide} 
         setCarouselSlide={setCarouselSlide}
         cardHeight={cardHeight} 
