@@ -87,7 +87,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<ShiftingCarouselMain  carouselDataProp={carouselDataProp}/>} />
+      <Route path="/" element={<ShiftingCarouselMain  carouselDataProp={carouselDataProp} />} />
       <Route path="/demo" element={<ShiftingCarouselDemo />} />
     </Routes>
   );
