@@ -60,6 +60,8 @@ export const ShiftingCarouselBtn = ({
     };
   
     return(
+      <>
+      {carouselData && carouselData?.length > 0 ?
         <span 
           className="carousel-btn-container"
           style={{marginTop: `${marginTopCalc}rem`}}
@@ -104,7 +106,11 @@ export const ShiftingCarouselBtn = ({
                    <FontAwesomeIcon icon={faArrowRight}/> 
 
         </button>
-      </span>
+        </span>
+        :
+        ""
+      }
+      </>
     )
 }
 ShiftingCarouselBtn.propTypes = {
@@ -125,4 +131,5 @@ ShiftingCarouselBtn.propTypes = {
   leftArrowBGColor: PropTypes.string.isRequired,
   rightArrowColor: PropTypes.string.isRequired,
   arrowRightBGColor: PropTypes.string.isRequired,
+  boxShadow: PropTypes.bool.isRequired,
 };

@@ -17,7 +17,7 @@ const ShiftingCarousel = ({carouselSlide, carouselData, cardWidth, cardHeight, c
   
     return baseValue;
   }
-  let carouselStylesArray = carouselData.length > 0 ? carouselData.map((_, index) => {
+  let carouselStylesArray = carouselData?.length > 0 ? carouselData.map((_, index) => {
     
     const baseSpacing = calculateBaseValue(carouselData.length);
     
@@ -37,7 +37,7 @@ const ShiftingCarousel = ({carouselSlide, carouselData, cardWidth, cardHeight, c
 
   let carouselClassConversion = {};
 
-  switch(carouselData.length){
+  switch(carouselData?.length){
       case 7:
         carouselClassConversion = {
           "-6": 1, "-5": 2, "-4": 3, "-3": 4, "-2": 5, "-1": 6, "0": 0,
@@ -72,68 +72,73 @@ const ShiftingCarousel = ({carouselSlide, carouselData, cardWidth, cardHeight, c
       className="carousel-container  position-relative"
       style={{position:"relative"}}
     >
-          
-    <div 
-      style={{position:"relative"}}
-      className="position-relative carousel-card-container">
-        {carouselData.map((carouselDataItem, carouselDataIndex) => {
-                        // index 0  ,1 , 2  ,3   ,4   ,5   ,6
-//   index + carousel slide:     6  ,7,  8,  9,  10  ,11  ,12
-         // carousel slide state 0, 1, 2, 3, 4,5,6,
-        //       0 + 1 = 1 = carousel-1
-        //       1 + 1 = 2 = carousel-2
-        //       2 + 1 = 3 = carousel-3
-        //       3 + 1 = 4 = carousel-4
-          // if carouselDataIndex together with the value of carouselSlide if X, the converted value should be Y:
+      {carouselData && carouselData?.length > 0 ?
+      
+      <div 
+        style={{position:"relative"}}
+        className="position-relative carousel-card-container">
+          {carouselData.map((carouselDataItem, carouselDataIndex) => {
+                          // index 0  ,1 , 2  ,3   ,4   ,5   ,6
+  //   index + carousel slide:     6  ,7,  8,  9,  10  ,11  ,12
+          // carousel slide state 0, 1, 2, 3, 4,5,6,
+          //       0 + 1 = 1 = carousel-1
+          //       1 + 1 = 2 = carousel-2
+          //       2 + 1 = 3 = carousel-3
+          //       3 + 1 = 4 = carousel-4
+            // if carouselDataIndex together with the value of carouselSlide if X, the converted value should be Y:
 
-          //    X    Y
-          //   -3 |  1
-          //   -2 |  2
-          //   -1 |  3
-          //    0 |  0
-          //    1 |  1
-          //    2 |  2
-          //    3 |  3
-          //    4 |  4
-          //    5 |  0
-          //    6 |  1
-          //    7 |  2
-          //    8 |  3
-          //    9 |  4
-          //    10|  3
-          //    11|  4
-          //    12|  5
-          //  
+            //    X    Y
+            //   -3 |  1
+            //   -2 |  2
+            //   -1 |  3
+            //    0 |  0
+            //    1 |  1
+            //    2 |  2
+            //    3 |  3
+            //    4 |  4
+            //    5 |  0
+            //    6 |  1
+            //    7 |  2
+            //    8 |  3
+            //    9 |  4
+            //    10|  3
+            //    11|  4
+            //    12|  5
+            //  
 
-            const stylesIndex = carouselClassConversion[`${carouselDataIndex + carouselSlide}`];
-            let carouselStyles= carouselStylesArray[stylesIndex]
-          return (
-            <div
-              key={carouselDataIndex}
-              style={carouselStyles}
-              className={`carousel-card-container position-absolute`} 
-              >
-              <div 
-                className="carousel-card-content card "
-                style={{width: `${cardWidth}rem`}}
-              >
-                <img
-                  src={carouselDataItem.carouselImg}
-                  className="card-img-top"
-                  style={{height: `${cardHeight}rem`}}
-                  alt={carouselDataItem.carouselTitle}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{carouselDataItem.carouselTitle}</h5>
-                  <div className="card-text">
-                    {carouselDataItem.carouselDescrtiption}
+              const stylesIndex = carouselClassConversion[`${carouselDataIndex + carouselSlide}`];
+              let carouselStyles= carouselStylesArray[stylesIndex]
+            return (
+              <div
+                key={carouselDataIndex}
+                style={carouselStyles}
+                className={`carousel-card-container position-absolute`} 
+                >
+                <div 
+                  className="carousel-card-content card "
+                  style={{width: `${cardWidth}rem`}}
+                >
+                  <img
+                    src={carouselDataItem.carouselImg}
+                    className="card-img-top"
+                    style={{height: `${cardHeight}rem`}}
+                    alt={carouselDataItem.carouselTitle}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{carouselDataItem.carouselTitle}</h5>
+                    <div className="card-text">
+                      {carouselDataItem.carouselDescrtiption}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
+      :
+      <h1>Add data to carousel component!</h1>
+    }
+          
 
     
     </div>
