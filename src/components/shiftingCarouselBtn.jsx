@@ -23,10 +23,10 @@ export const ShiftingCarouselBtn = ({
   rightArrowColor,
   arrowRightBGColor,
 
-  boxShadow
+  boxShadow,
+  btnAnimation
 })=>{
   
-    const [enlarged, setEnlarged] = useState(false);
     const [marginTopCalc, setMarginTopCalc] = useState(0);
 
   useEffect(()=>{
@@ -54,10 +54,7 @@ export const ShiftingCarouselBtn = ({
         }
     };
   
-    const handleBtnAnimation = () => {
-      setEnlarged(true);
-      setTimeout(() => setEnlarged(false), 300); // Return to normal size after 300ms
-    };
+
   
     return(
       <>
@@ -78,14 +75,13 @@ export const ShiftingCarouselBtn = ({
             color: `${leftArrowColor ? leftArrowColor : "skyblue"}`,
             backgroundColor: `${leftArrowBGColor ? leftArrowBGColor : "white"}`
           }}
-          className={`carousel-btn fs-3 ${enlarged ? 'englarged2' : ''} ${boxShadow ? "boxShadow" : ""}  me-5`}
+          className={`carousel-btn fs-3 ${btnAnimation ? 'carouse-btn-animation' : ''} ${boxShadow ? "boxShadow" : ""}  me-5`}
           onClick={() => {
             setCarouselSlide(handleCarouselSlideLeft());
-            handleBtnAnimation();
           }}>
         <FontAwesomeIcon icon={faArrowLeft}/> 
       </button>
-      
+      {btnAnimation ? "animated!": "no animation"}
         <button
           type="button"
           style={{
@@ -96,10 +92,10 @@ export const ShiftingCarouselBtn = ({
             color: `${rightArrowColor ? rightArrowColor : "skyblue"}`,
             backgroundColor: `${arrowRightBGColor ? arrowRightBGColor : "white"}`,
           }}
-          className={`carousel-btn fs-3 ${enlarged ? 'englarged1' : ''} ${boxShadow ? "boxShadow" : ""}  `}
+          carouse-btn-animation
+          className={`carousel-btn fs-3 ${btnAnimation ? 'carouse-btn-animation' : ''} ${boxShadow ? "boxShadow" : ""}  `}
           onClick={() => {
             setCarouselSlide(handleCarouselSlideRight())
-            handleBtnAnimation();
           }
             }
             >

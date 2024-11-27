@@ -23,88 +23,9 @@ arrowLeftBorderColorProp ,
        leftBorderTypeProp,
      rightBorderTypeProp ,
             boxShadowProp,
+            btnAnimationProp,
 
 }) {
-//   const carouselDataBackup = [
-//     {
-//       carouselImg:"https://picsum.photos/id/90/200",
-//       carouselTitle: "Item 1",
-//       carouselDescrtiption: (
-//         <ul>
-//           <li>8+ cribs for naptime</li>
-//           <li>8+ strollers for enjoying outdoors</li>
-//           <li>50+ toys promoting development</li>
-//         </ul>
-//       ),
-//     },
-//     {
-//       carouselImg:"https://picsum.photos/id/200/200",
-//       carouselTitle: "Item 2",
-//       carouselDescrtiption: (
-//         <ul>
-//           <li>8+ cribs for naptime</li>
-//           <li>8+ strollers for enjoying outdoors</li>
-//           <li>50+ toys promoting development</li>
-//         </ul>
-//       ),
-//     },
-//     {
-//       carouselImg:"https://picsum.photos/id/2/200",
-//       carouselTitle: "Item 3",
-//       carouselDescrtiption: (
-//         <ul>
-//           <li>
-//  5 large fenced in play areas designated for different age groups
-//           </li>
-//           <li>3 playground structures</li>
-//         </ul>
-//       ),
-//     },
-//     {
-//       carouselImg:"https://picsum.photos/id/45/200",
-//       carouselTitle: "Item 4",
-//       carouselDescrtiption: (
-//         <ul>
-//           <li>10+ Art project supplies</li>
-//           <li>Sanbox used for sensory motor skills</li>
-//           <li>Diverse book collection</li>
-//         </ul>
-//       ),
-//     },
-//     {
-//       carouselImg:"https://picsum.photos/id/67/200",
-//       carouselTitle: "Item 5",
-//       carouselDescrtiption: (
-//         <ul>
-//           <li>Fish Tank that is regulated daily</li>
-//           <li>10+ science kits</li>
-//           <li>Art supplies for independent </li>
-//         </ul>
-//       ),
-//     },
-//     {
-//       carouselImg:"https://picsum.photos/id/67/200",
-//       carouselTitle: "Item 6",
-//       carouselDescrtiption: (
-//         <ul>
-//           <li>Fish Tank that is regulated daily</li>
-//           <li>10+ science kits</li>
-//           <li>Art supplies for independent </li>
-//         </ul>
-//       ),
-//     },
-//     {
-//       carouselImg:"https://picsum.photos/id/67/200",
-//       carouselTitle: "Item 7",
-//       carouselDescrtiption: (
-//         <ul>
-//           <li>Fish Tank that is regulated daily</li>
-//           <li>10+ science kits</li>
-//           <li>Art supplies for independent </li>
-//         </ul>
-//       ),
-//     },
-//   ];
 
   const [carouselSlide, setCarouselSlide] = useState(0);
  const carouselProps ={
@@ -127,7 +48,9 @@ arrowLeftBorderColorProp ,
   "arrowLeftBorderColor": arrowLeftBorderColorProp  ? arrowLeftBorderColorProp :"#000066",
   "leftBorderType": leftBorderTypeProp ? leftBorderTypeProp :"solid",
   "rightBorderType": rightBorderTypeProp  ? rightBorderTypeProp  : "solid",
-  "boxShadow": boxShadowProp ? boxShadowProp:true
+  "boxShadow": boxShadowProp ? boxShadowProp:true,
+  "btnAnimation": btnAnimationProp ? btnAnimationProp:true
+
 
 }
 
@@ -166,6 +89,7 @@ arrowLeftBorderColorProp ,
         rightArrowColor={carouselProps.arrowRightColor}
         arrowRightBGColor={carouselProps.arrowRightBGColor}
         boxShadow={carouselProps.boxShadow}
+        btnAnimation={carouselProps.btnAnimation}
         />
         
        
@@ -192,5 +116,6 @@ arrowLeftBorderColorProp : PropTypes.string.isRequired,
        leftBorderTypeProp: PropTypes.string.isRequired,
      rightBorderTypeProp : PropTypes.string.isRequired,
             boxShadowProp: PropTypes.bool.isRequired,
+            btnAnimation: PropTypes.bool.isRequired,
 
 }
