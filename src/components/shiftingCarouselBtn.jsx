@@ -81,7 +81,6 @@ export const ShiftingCarouselBtn = ({
           }}>
         <FontAwesomeIcon icon={faArrowLeft}/> 
       </button>
-      {btnAnimation ? "animated!": "no animation"}
         <button
           type="button"
           style={{

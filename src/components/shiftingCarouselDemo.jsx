@@ -185,6 +185,7 @@ function ShiftingCarouselDemo() {
         setBoxShadow={setBoxShadow}
         boxShadow={boxShadow}
         btnAnimation={btnAnimation}
+        setBtnAnimation={setBtnAnimation}
         /> 
     </div>
   )
