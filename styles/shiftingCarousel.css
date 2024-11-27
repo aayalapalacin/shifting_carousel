@@ -85,9 +85,8 @@
     }
   
     .carousel-card-content {
-      margin-left:1rem;
-      width: 85%;
-      height: 19rem;
+      margin-left: 3rem;
+      height: 25rem;
     }
   
     .carousel-card-container {
@@ -122,12 +121,12 @@
       left: 60%;
     }
   }
-  
+ 
   @media screen and (min-width: 1020px) and (max-width: 1035px) {
     .carousel-card-content {
       width: 18rem;
-      height: 22rem;
-      margin-left: 6rem;
+      height: 26rem;
+      margin-left: 4rem;
   }
   
   .card-body{

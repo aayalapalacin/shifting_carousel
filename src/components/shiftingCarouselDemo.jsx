@@ -108,6 +108,7 @@ function ShiftingCarouselDemo() {
   const [leftBorderType, setLeftBorderType] = useState("solid");
   const [rightBorderType, setRightBorderType] = useState("solid");
   const [boxShadow, setBoxShadow] = useState(true);
+  const [btnAnimation, setBtnAnimation] = useState(true);
 
 
 
@@ -145,6 +146,7 @@ function ShiftingCarouselDemo() {
         rightArrowColor={arrowRightColor}
         arrowRightBGColor={arrowRightBGColor}
         boxShadow={boxShadow}
+        btnAnimation={btnAnimation}
         />
         
        <CarouselDemo 
@@ -182,6 +184,8 @@ function ShiftingCarouselDemo() {
 
         setBoxShadow={setBoxShadow}
         boxShadow={boxShadow}
+        btnAnimation={btnAnimation}
+        setBtnAnimation={setBtnAnimation}
         /> 
     </div>
   )

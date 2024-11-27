@@ -36,7 +36,9 @@ function CarouselDemo(
   setRightBorderType,
 
   boxShadow,
-  setBoxShadow
+  setBoxShadow,
+  btnAnimation,
+  setBtnAnimation,
   } 
   ) 
 {
@@ -134,14 +136,35 @@ function CarouselDemo(
        ""}   
         <div className="arrow-title form-check form-switch d-flex justify-content-center align-items-center">
           <h3 className='me-5'>Arrow Styles</h3>
-          <input onChange={()=> setArrowStylesView(!arrowStylesView)} className="form-check-input  border-secondary" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+          <input 
+            onChange={()=> setArrowStylesView(!arrowStylesView)} 
+            className="form-check-input  border-secondary" 
+            type="checkbox" 
+            role="switch" 
+          />
         </div>    
       {arrowStylesView ? 
       <>
         <div className='arrow-left-container justify-content-center align-items-center m-3 mb-0 border border-1 p-4 input-group'>
         <div className="arrow-box-shadow form-check form-switch d-flex justify-content-center align-items-center">
+          <h6 className='me-5'>Button Animation</h6>
+          <input 
+            onChange={()=> setBtnAnimation(!btnAnimation)} 
+            className="form-check-input  border-secondary" 
+            type="checkbox" 
+            role="switch" 
+            checked={btnAnimation ? true : false}
+          />
+        </div>   
+        <div className="arrow-box-shadow form-check form-switch d-flex justify-content-center align-items-center">
           <h6 className='me-5'>Box Shadow</h6>
-          <input onChange={()=> setBoxShadow(!boxShadow)} className="form-check-input  border-secondary" type="checkbox" role="switch" />
+          <input 
+            onChange={()=> setBoxShadow(!boxShadow)} 
+            className="form-check-input  border-secondary" 
+            type="checkbox" 
+            role="switch"
+            checked={boxShadow ? true : false}
+          />
         </div>   
           <div className="arrow-left-color d-flex m-3">
                 <label className='me-2'  htmlFor="arrow-left-color">Arrow Left Color</label>
