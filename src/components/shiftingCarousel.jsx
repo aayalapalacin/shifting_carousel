@@ -18,14 +18,14 @@ const ShiftingCarousel = ({carouselSlide, carouselData, cardWidth, cardHeight, c
     return baseValue;
   }
   let carouselStylesArray = carouselData?.length > 0 ? carouselData.map((_, index) => {
-    
+ 
     const baseSpacing = calculateBaseValue(carouselData.length);
     
-    const top = `-${index * baseSpacing}rem`;
-    const right = `-${index * baseSpacing * 1.4}rem`;
+    const top = `-${index * baseSpacing +5  }rem`;
+    const right = `-${index * baseSpacing * 1.4 + 5 }rem`;
     const opacity = `${1 - index * 0.1}`;
     const zIndex = `${carouselData.length - index}`;
-    
+   
     return {
       top,
       right,

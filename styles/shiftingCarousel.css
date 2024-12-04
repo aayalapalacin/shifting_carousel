@@ -3,8 +3,8 @@
 
 
 .carousel-card-container {
-  width: 35rem;
-  height: 31rem;
+  /* width: 35rem;
+  height: 31rem; */
   position: absolute;
   transition: opacity 0.7s, top 0.7s, left 0.7s;
 }
@@ -17,9 +17,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 25rem; /* or a height that fits your design */
     margin: 0 auto;
-    margin-top: 6rem; /* Adjust this to control the spacing from the top */
   }
   
   .card{
@@ -35,10 +33,7 @@
   }
   
   
-  .carousel-card-container {
-    width: 35rem;
-    height: 31rem;
-  }
+  
   
   .carousel-btn {
     /* border: #89c9d0 2px solid; */
@@ -51,14 +46,7 @@
   
   }
   
-  .enlarged1 {
-    transform: scale(1.1); /* Scale the button to 110% of its original size */
-  }
-  
-  
-  .enlarged2 {
-    transform: scale(1.1); /* Scale the button to 110% of its original size */
-  }
+ 
   
   @media screen and (min-width: 315px) and (max-width: 800px) {
     .carousel-card-content {

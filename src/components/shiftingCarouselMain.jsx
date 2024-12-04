@@ -56,9 +56,7 @@ arrowLeftBorderColorProp ,
 
   return (
     <div>
-      <div className='title-container' style={{margin:"0rem 0rem 31rem 0rem"}}>
-        <h1>Shifting Carousel</h1>
-      </div>
+     
       <ShiftingCarousel
         carouselData={carouselProps.carouselData}
         carouselSlide={carouselSlide}
