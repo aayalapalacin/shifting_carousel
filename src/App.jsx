@@ -6,84 +6,84 @@ import ShiftingCarouselMain from './components/shiftingCarouselMain';
 function App() {
   const carouselDataProp = [
     {
-      carouselImg:"https://picsum.photos/id/90/200",
-      carouselTitle: "Item 1",
+      carouselImg: "https://picsum.photos/id/101/200",
+      carouselTitle: "Dynamic Stacking",
       carouselDescrtiption: (
         <ul>
-          <li>bitch</li>
-          <li>bitch</li>
-          <li>50+ toys promoting development</li>
+          <li>Automatically positions cards in a visually appealing stack</li>
+          <li>Works with any number of cards </li>
+          <li>Adjusts dynamically to the size of the container</li>
         </ul>
       ),
     },
     {
-      carouselImg:"https://picsum.photos/id/200/200",
-      carouselTitle: "Item 2",
+      carouselImg: "https://picsum.photos/id/102/200",
+      carouselTitle: "Customizable Card Styles",
       carouselDescrtiption: (
         <ul>
-          <li>8+ cribs for naptime</li>
-          <li>8+ strollers for enjoying outdoors</li>
-          <li>50+ toys promoting development</li>
+          <li>Easily set card width and height</li>
+          <li>Supports custom images, text, and more</li>
+          <li>Works seamlessly with your CSS</li>
         </ul>
       ),
     },
     {
-      carouselImg:"https://picsum.photos/id/2/200",
-      carouselTitle: "Item 3",
+      carouselImg: "https://picsum.photos/id/103/200",
+      carouselTitle: "Interactive Navigation",
       carouselDescrtiption: (
         <ul>
-          <li>
-            5 large fenced in play areas designated for different age groups
-          </li>
-          <li>3 playground structures</li>
+          <li>Arrow buttons for cycling through cards</li>
+          <li>Fully customizable arrow colors and styles</li>
+          <li>Smooth animations for a polished look</li>
         </ul>
       ),
     },
     {
-      carouselImg:"https://picsum.photos/id/45/200",
-      carouselTitle: "Item 4",
+      carouselImg: "https://picsum.photos/id/104/200",
+      carouselTitle: "Animation Options",
       carouselDescrtiption: (
         <ul>
-          <li>10+ Art project supplies</li>
-          <li>Sanbox used for sensory motor skills</li>
-          <li>Diverse book collection</li>
+          <li>Define transition timing for animations</li>
+          <li>Control the smoothness of card movement</li>
+          <li>Customize hover and click animations</li>
         </ul>
       ),
     },
     {
-      carouselImg:"https://picsum.photos/id/67/200",
-      carouselTitle: "Item 5",
+      carouselImg: "https://picsum.photos/id/110/200",
+      carouselTitle: "Responsive Design",
       carouselDescrtiption: (
         <ul>
-          <li>Fish Tank that is regulated daily</li>
-          <li>10+ science kits</li>
-          <li>Art supplies for independent </li>
+          <li>Adapts to different screen sizes</li>
+          <li>Maintains visual integrity on mobile and desktop</li>
+          <li>Perfect for modern, responsive UIs</li>
         </ul>
       ),
     },
     {
-      carouselImg:"https://picsum.photos/id/67/200",
-      carouselTitle: "Item 6",
+      carouselImg: "https://picsum.photos/id/106/200",
+      carouselTitle: "Simple Setup",
       carouselDescrtiption: (
         <ul>
-          <li>Fish Tank that is regulated daily</li>
-          <li>10+ science kits</li>
-          <li>Art supplies for independent </li>
+          <li>Predefined default values for quick implementation</li>
+          <li>Only requires minimal configuration</li>
+          <li>Ready to use out of the box</li>
         </ul>
       ),
     },
     {
-      carouselImg:"https://picsum.photos/id/67/200",
-      carouselTitle: "Item 7",
+      carouselImg: "https://picsum.photos/id/107/200",
+      carouselTitle: "Customizable Arrow Borders",
       carouselDescrtiption: (
         <ul>
-          <li>Fish Tank that is regulated daily</li>
-          <li>10+ science kits</li>
-          <li>Art supplies for independent </li>
+          <li>Adjust border size, color, and type</li>
+          <li>Supports individual left and right customization</li>
+          <li>Adds a professional touch to your carousel</li>
         </ul>
       ),
     },
   ];
+  
 
   return (
     <Routes>

@@ -126,7 +126,11 @@ const ShiftingCarousel = ({carouselSlide, carouselData, cardWidth, cardHeight, c
                   />
                   <div className="card-body">
                     <h5 className="card-title">{carouselDataItem.carouselTitle}</h5>
-                    <div className="card-text">
+  
+                    <div 
+                    className="card-text fs-6"
+                    
+                    >
                       {carouselDataItem.carouselDescrtiption}
                     </div>
                   </div>
